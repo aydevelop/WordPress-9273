@@ -8,3 +8,11 @@ function fancy_scripts(){
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true);
 }
 
+add_action( 'after_setup_theme', 'fancy_config', 0);
+function fancy_config(){
+
+    register_nav_menus( [
+		'fancy_main_menu' => 'Top Menu'
+	]);
+
+}

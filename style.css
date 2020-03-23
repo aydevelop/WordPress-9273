@@ -21,3 +21,17 @@ Tags: e-commerce, custom-menu, custom-logo, footer-widget, blog, sticky-post
 .second-column{
     background: yellow;
 }
+
+.main-menu ul{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 2;
+}
+
+.main-menu ul li{
+    display: inline;
+    margin: 0 5px 0 0;
+}
+
