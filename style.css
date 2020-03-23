@@ -9,3 +9,15 @@ Licence: GNU
 Tags: e-commerce, custom-menu, custom-logo, footer-widget, blog, sticky-post
 
 */
+
+.top-bar{
+    background: red;
+}
+
+.brand{
+    background: green;
+}
+
+.second-column{
+    background: yellow;
+}
