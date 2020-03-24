@@ -14,7 +14,7 @@ function fancy_config(){
     register_nav_menus( [
         'fancy_main_menu' => 'Top Menu',
         'fancy_footer_menu' => 'Footer Menu'
-	]);
+    ]);
 
     add_theme_support('woocommerce', array(
         'thumbnail_image_width' => 255,
@@ -36,5 +36,19 @@ function fancy_config(){
     if ( ! isset( $content_width ) ) {
         $content_width = 600;
     }
-
 }
+
+
+// add_action('wp','check');
+// function check(){
+//     if(is_product()){
+//         //add_action('woocommerce_sidebar', 'woocommerce_get_sidebar2', 0);
+//     }
+// }
+
+// // add_action('woocommerce_sidebar', 'woocommerce_get_sidebar2', 0);
+// // function woocommerce_get_sidebar2()
+// // {
+// //     var_dump("1010");
+// //     die();
+// // }
