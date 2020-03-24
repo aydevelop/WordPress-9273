@@ -12,7 +12,8 @@ add_action( 'after_setup_theme', 'fancy_config', 0);
 function fancy_config(){
 
     register_nav_menus( [
-		'fancy_main_menu' => 'Top Menu'
+        'fancy_main_menu' => 'Top Menu',
+        'fancy_footer_menu' => 'Footer Menu'
 	]);
 
 }
