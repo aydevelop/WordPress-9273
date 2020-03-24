@@ -41,7 +41,7 @@ Tags: e-commerce, custom-menu, custom-logo, featured-images, footer-widgets, the
 --------------------------------------------------------------*/
 
 body{
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Roboto' !important;
 }
 
 .content-area{
@@ -177,8 +177,18 @@ header .brand img{
 }
 
 .main-menu .navbar-toggler-icon {
-    background-image: url('img/hamburger-menu.svg');
+    background-image: url('img/hamburger-menu.svg') !important;
+    background-position: center center;
+    margin-right: 10px;
 }
+
+.main-menu .navbar-toggler{
+    border: 1px solid black;
+    text-align: center;
+}
+
+:focus {outline:none !important;}
+::-moz-focus-inner {border:0 !important;}
 
 .main-menu ul li .dropdown-menu .dropdown > a::after{
     display: inline-block;
