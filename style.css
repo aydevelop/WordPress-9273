@@ -253,6 +253,11 @@ header .brand img{
     background-size: cover;
 }
 
+.flexslider ul.flex-direction-nav{
+    list-style: none !important;
+    padding-top: 50px;
+}
+
 .cart .items{
     background: #CA2424;
     color: #fff;
