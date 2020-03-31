@@ -44,3 +44,19 @@ function register_navwalker(){
 	require_once get_template_directory() . '/php/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+	ob_start();
+	?>
+	
+    <span class="items">
+        <?php echo WC()->cart->get_cart_contents_count(); ?>
+    </span>
+
+    <?php
+	$fragments['span.items'] = ob_get_clean();
+	return $fragments;
+}

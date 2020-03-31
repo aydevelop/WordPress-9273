@@ -11,7 +11,7 @@
         <header>
             <section class="search">
                 <div class="container">
-                    Search
+                    <?php get_search_form(); ?>
                 </div>
             </section>
             <section class="top-bar">
@@ -20,7 +20,16 @@
                         <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">Logo</div>
                         <div class="second-column col-md-9 col-12 col-lg-10">
                             <div class="row">
-                                <div class="account col-12">Account</div>
+                                <div class="account col-12">
+                                    <div class="cart text-right">
+                                        <div class="cart text-right">
+                                            <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span>
+                                            <span class="items">
+                                                <?php echo WC()->cart->get_cart_contents_count(); ?>
+                                            </span></a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                                             

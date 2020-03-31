@@ -250,18 +250,22 @@ header .brand img{
     display: inline-block;
     background-repeat: no-repeat;
     vertical-align: bottom; 
+    background-size: cover;
 }
 
 .cart .items{
     background: #CA2424;
     color: #fff;
     width: 20px;
-    height: 20px;
+    height: 23px;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
 }
 
+.cart:hover{
+    text-decoration: none;
+}
 
 /* Flex Slider */
 .flexslider{
