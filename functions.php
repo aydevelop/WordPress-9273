@@ -34,6 +34,12 @@ function fancy_config(){
     add_theme_support('wc-product-gallery-zoom');
     add_theme_support('wc-product-gallery-lightbox');
     add_theme_support('wc-product-gallery-slider');
+    add_theme_support('custom-logo', array(
+        'height' => 85,
+        'width'  => 160,
+        'flex_height' => true,
+        'flex_width' => true
+    ));
 
     if ( ! isset( $content_width ) ) {
         $content_width = 600;
@@ -41,7 +47,8 @@ function fancy_config(){
 }
 
 function register_navwalker(){
-	require_once get_template_directory() . '/php/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory() . '/php/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory() . '/php/customizer.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 

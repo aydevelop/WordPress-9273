@@ -17,11 +17,39 @@
             <section class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">Logo</div>
+                        <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">
+            
+                            <?php if(has_custom_logo()){ ?>
+                                <a href="<?php echo home_url('/')?>">
+                                    <?php the_custom_logo(); ?>
+                                </a>
+                            <?php }else{ ?>
+                                <p class="site-title">
+                                    <?php bloginfo('title'); ?>
+                                </p>
+                                <span>
+                                    <?php bloginfo('description'); ?>
+                                </span>
+                            <?php } ?>
+                        </div>
                         <div class="second-column col-md-9 col-12 col-lg-10">
                             <div class="row">
                                 <div class="account col-12">
                                     <div class="cart text-right">
+                                        <div class="navbar-expand">
+                                            <div class="navbar-nav float-left ml-2 text-dark">
+                                                <?php if(is_user_logged_in()){ ?>
+                                                    <li>
+                                                        <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link">My Account</a>
+                                                    </li> 
+                                                    <li>
+                                                        <a href="<?php  echo  esc_url(wp_logout_url(get_permalink(get_option('woocommerce_myaccount_page_id')))); ?>" class="nav-link">Logout</a>
+                                                    </li>
+                                                <?php }else{ ?>
+                                                    <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link">Login/Register</a>
+                                                <?php } ?>
+                                            </div> 
+                                        </div>
                                         <div class="cart text-right">
                                             <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span>
                                             <span class="items">

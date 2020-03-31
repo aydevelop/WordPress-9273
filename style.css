@@ -256,7 +256,7 @@ header .brand img{
 .cart .items{
     background: #CA2424;
     color: #fff;
-    width: 20px;
+    padding: 0 11px;
     height: 23px;
     border-radius: 50%;
     display: inline-block;
