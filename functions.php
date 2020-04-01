@@ -78,3 +78,44 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 }
 
 add_action("woocommerce_after_shop_loop_item_title","the_excerpt",1);
+
+add_action("widgets_init", "fancy_sidebars");
+function fancy_sidebars(){
+    register_sidebar(array(
+        'name' => 'Fancy Main Sidebar',
+        'id' => 'fancy-sidebar-1',
+        'description' => 'Drag and drop your widgets here',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+    ));
+
+    register_sidebar(array(
+        'name' => 'Fancy Shop Sidebar',
+        'id' => 'fancy-sidebar-2',
+        'description' => 'Drag and drop your widgets here',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+    ));
+
+    register_sidebar(array(
+        'name' => 'Fancy Footer Sidebar',
+        'id' => 'fancy-sidebar-3',
+        'description' => 'Drag and drop your widgets here',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+    ));
+}
+
+
+add_filter('loop_shop_columns', 'loop_columns', 999);
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 2;
+	}
+}

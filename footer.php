@@ -4,7 +4,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            Footer Widgets 2
+                            <?php dynamic_sidebar('fancy-sidebar-3'); ?>
                         </div>
                     </div>
                 </div>
