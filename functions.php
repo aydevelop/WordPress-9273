@@ -73,3 +73,5 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['span.items'] = ob_get_clean();
 	return $fragments;
 }
+
+add_action("woocommerce_after_shop_loop_item_title","the_excerpt",1);

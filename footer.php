@@ -3,7 +3,9 @@
             <section class="footer-widgets">
                 <div class="container">
                     <div class="row">
-                        Footer Widgets 2
+                        <div class="col">
+                            Footer Widgets 2
+                        </div>
                     </div>
                 </div>
             </section>

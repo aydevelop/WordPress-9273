@@ -28,13 +28,18 @@
                                     'post__in' => $slider_page
                                 );
 
+                                $q = 0;
                                 $slider_loop = new WP_Query($args);
                                 if($slider_loop->have_posts()){
                                     while($slider_loop->have_posts()){
                                             $slider_loop->the_post();
+                                            $q++;
                                         ?>
+                                        
                                             <li>
-                                                <img src="https://cdn.shopify.com/s/files/1/0066/1769/4275/t/5/assets/ShopIMG-1-color-RGB-C-2019-Simple.png?v=9774215999303656515" />
+                                                <a href="<?php echo $slider_button_url[$q]  ?>">
+                                                    <img src="https://cdn.shopify.com/s/files/1/0066/1769/4275/t/5/assets/ShopIMG-1-color-RGB-C-2019-Simple.png?v=9774215999303656515" />
+                                                </a>
                                                 <div class="container">
                                                     <div class="subtitle text-center">
                                                         <?php the_title(); ?>
@@ -54,7 +59,70 @@
                 </div>
             </div>
         </section>
-        <hr>
+       
+        <?php 
+            $popular_limit = get_theme_mod('set_popular_max_num', 4);
+            $arrivals_limit = get_theme_mod('set_arrivals_max_num', 4);
+
+        ?>
+
+        <section class="popular-products">
+           <div class="container">
+                <h3>Popular Products</h3>
+                <?php 
+                   echo do_shortcode('[products limit="'.$popular_limit.'" columns="4" orderby="popularity"]');
+                ?>
+           </div>
+        </section>
+
+        <section class="popular-products">
+           <div class="container">
+                <h3>New Arrivals</h3>
+                <?php 
+                   echo do_shortcode('[products limit="'.$arrivals_limit.'" columns="4" orderby="date"]');
+                ?>
+           </div>
+        </section>
+
+        <?php 
+            $showdeal = get_theme_mod('set_deal_show', 0);
+            $deal = get_theme_mod('set_deal');
+            $currency = get_woocommerce_currency_symbol();
+            $regular = get_post_meta($deal, '_regular_price', true);
+            $sale = get_post_meta($deal, '_sale_price', true);
+           
+
+            if($showdeal == 1 && (!empty($deal))){
+                $discount_precentage = absint( 100 - ($sale/$regular)*100 );
+        ?>
+
+            <div class="deal-of-the-week">
+                <div class="container">
+                    <h2>Deal of the Week</h2>
+                    
+                        <div class="row d-flex align-items-center">
+                                <div class="deal-img col-md-6 col-12 ml-auto text-center">
+                                    <?php echo get_the_post_thumbnail($deal, 
+                                    'large', array('class'=>'img-fluid')); ?>
+                                </div>
+                                <div class="deal-desc col-md-4 col-12 mr-auto text-center">
+                                    <div class="discount">
+                                        <?php echo $discount_precentage . '% OFF'; ?>
+                                    </div>
+                                    <h3>
+                                        <a href="<?php echo get_permalink($deal); ?>"><?php echo get_the_title($deal); ?></a>
+                                    </h3>
+                                    <p>
+                                        <?php echo get_the_excerpt($deal); ?>
+                                    </p>
+                                </div>
+                        </div>         
+                    
+                </div>
+            </div>
+
+            <?php } ?>
+
         <section class="lab-blog">
             <div class="container">
                 <div class="row">
