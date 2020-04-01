@@ -52,6 +52,7 @@ function fancy_config(){
 
     add_image_size('fancy-slider', 1920, 400, array('center', 'center'));
     add_image_size('fancy-blog', 900, 300, array('center', 'center'));
+    add_theme_support( 'title-tag' );
 }
 
 function register_navwalker(){

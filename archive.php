@@ -6,6 +6,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
+                    <div class="text-center">
+                        <?php the_archive_title('<h3 class="article-title">', '</h3>') ?>
+                    </div>
+                    <hr>
                     <?php
                         if(have_posts()){
                             while(have_posts()){
@@ -16,19 +20,7 @@
                                             <a href="<?php the_permalink(); ?>">
                                                 <?php the_title(); ?>
                                             </a>
-                                        </h2>  
-                                        <div class="post-thumbnail text-center">
-                                            <a href="<?php the_permalink(); ?>">
-                                            <?php 
-                                                if(has_post_thumbnail()){
-                                                    the_post_thumbnail(
-                                                        'fancy-blog',
-                                                        array('class'=>'img-fluid')
-                                                    );
-                                                }
-                                            ?>
-                                            </a>
-                                        </div>
+                                        </h2>
                                         <div class="meta">
                                             <p>
                                                 Published by 
@@ -48,7 +40,6 @@
                                         <div><?php the_excerpt(); ?></div>
                                     </article>
                                 <?php 
-                                
                             }
                             the_posts_pagination();
                         }else{

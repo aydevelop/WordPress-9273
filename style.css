@@ -1847,3 +1847,12 @@ a img.aligncenter {
 	max-width: 100%;
 	height: auto;
 }
+
+.comment-body{
+    margin-left:40px;
+}
+
+.comment-meta.commentmetadata{
+    font-size: 12px;
+    margin-top: 4px;
+}

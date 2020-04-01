@@ -5,7 +5,10 @@
         <section class="news">
             <div class="container">
                 <div class="row">
+                   
                     <div class="col">
+                    <h2>Search results for: <?php echo get_search_query(); ?></h2>
+                    <hr>
                     <?php
                         if(have_posts()){
                             while(have_posts()){

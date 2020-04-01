@@ -45,12 +45,14 @@
                                                 <?php } ?>
                                             </p>
                                         </div>
-                                        <div><?php the_excerpt(); ?></div>
+                                        <div><?php the_content(); ?></div>
                                     </article>
+
+                                    <?php if(comments_open()){ 
+                                        comments_template();
+                                    } ?>
                                 <?php 
-                                
                             }
-                            the_posts_pagination();
                         }else{
                             ?>
                                 <p>Nothing to display</p>
