@@ -8,6 +8,7 @@ function fancy_scripts(){
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true);
 
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&display=swap');
+    wp_enqueue_style('google-fonts-2', 'https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
 
     wp_enqueue_script('flexslider-min-js', get_template_directory_uri() . '/inc/flexslider/jquery.flexslider-min.js', array('jquery'), '', true);
     wp_enqueue_style('flexslider-css', get_template_directory_uri() . '/inc/flexslider/flexslider.css', array(), '', 'all');
@@ -50,6 +51,7 @@ function fancy_config(){
     }
 
     add_image_size('fancy-slider', 1920, 400, array('center', 'center'));
+    add_image_size('fancy-blog', 900, 300, array('center', 'center'));
 }
 
 function register_navwalker(){

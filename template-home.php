@@ -68,7 +68,9 @@
 
         <section class="popular-products">
            <div class="container">
-                <h3>Popular Products</h3>
+                <div class="section-title">
+                    <h2>Popular Products</h2>
+                </div>
                 <?php 
                    echo do_shortcode('[products limit="'.$popular_limit.'" columns="4" orderby="popularity"]');
                 ?>
@@ -77,7 +79,9 @@
 
         <section class="popular-products">
            <div class="container">
-                <h3>New Arrivals</h3>
+                <div class="section-title">
+                    <h2>New Arrivals</h2>
+                </div>
                 <?php 
                    echo do_shortcode('[products limit="'.$arrivals_limit.'" columns="4" orderby="date"]');
                 ?>
@@ -98,7 +102,9 @@
 
             <div class="deal-of-the-week">
                 <div class="container">
+                <div class="section-title">
                     <h2>Deal of the Week</h2>
+                </div>
                     
                         <div class="row d-flex align-items-center">
                                 <div class="deal-img col-md-6 col-12 ml-auto text-center">
@@ -125,15 +131,38 @@
 
         <section class="lab-blog">
             <div class="container">
-                <div class="row">
+                <div class="section-title">
+                    <h2>News From Our Blog</h2>
+                </div>
+                <div class="row mt-3">
                     <?php
-                        if(have_posts()){
-                            while(have_posts()){
-                                the_post();
+
+                        $args = array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 2
+                        );
+
+                        $blog_posts = new WP_Query( $args );
+
+                        if($blog_posts->have_posts()){
+                            while($blog_posts->have_posts()){
+                                $blog_posts->the_post();
                                 ?>
-                                    <article>
-                                        <h2><?php the_title(); ?></h2>  
-                                        <div><?php the_content(); ?></div>
+                                    <article class="col-12 col-md-6">
+                                        <?php 
+                                            if(has_post_thumbnail()){
+                                                the_post_thumbnail(
+                                                    'fancy-blog',
+                                                    array('class'=>'img-fluid')
+                                                );
+                                            }
+                                        ?>
+                                        <h3>
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>  
+                                        <div><?php the_excerpt(); ?></div>
                                     </article>
                                 <?php 
                             }
