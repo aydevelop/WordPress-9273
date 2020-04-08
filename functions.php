@@ -18,6 +18,10 @@ function fancy_scripts(){
 add_action( 'after_setup_theme', 'fancy_config', 0);
 function fancy_config(){
 
+    $textdomain = "fancy_theme";
+    load_theme_textdomain( $textdomain, get_stylesheet_directory() . "/languages/" );
+    load_theme_textdomain( $textdomain, get_template_directory() . "/languages/" );
+
     register_nav_menus( [
         'fancy_main_menu' => 'Top Menu',
         'fancy_footer_menu' => 'Footer Menu'
@@ -53,6 +57,8 @@ function fancy_config(){
     add_image_size('fancy-slider', 1920, 400, array('center', 'center'));
     add_image_size('fancy-blog', 900, 300, array('center', 'center'));
     add_theme_support( 'title-tag' );
+
+
 }
 
 function register_navwalker(){

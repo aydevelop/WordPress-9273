@@ -40,13 +40,13 @@
                                             <div class="navbar-nav float-left ml-2 text-dark">
                                                 <?php if(is_user_logged_in()){ ?>
                                                     <li>
-                                                        <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link">My Account</a>
+                                                        <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link"><?php esc_html_e("My Account",'fancy_theme'); ?></a>
                                                     </li> 
                                                     <li>
-                                                        <a href="<?php  echo  esc_url(wp_logout_url(get_permalink(get_option('woocommerce_myaccount_page_id')))); ?>" class="nav-link">Logout</a>
+                                                        <a href="<?php  echo  esc_url(wp_logout_url(get_permalink(get_option('woocommerce_myaccount_page_id')))); ?>" class="nav-link"><?php esc_html_e("Logout",'fancy_theme'); ?></a>
                                                     </li>
                                                 <?php }else{ ?>
-                                                    <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link">Login/Register</a>
+                                                    <a href="<?php  echo  esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="nav-link"><?php esc_html_e("Login/Register",'fancy_theme'); ?></a>
                                                 <?php } ?>
                                             </div> 
                                         </div>

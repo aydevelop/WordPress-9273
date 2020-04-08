@@ -38,7 +38,7 @@
                                         
                                             <li>
                                                 <a href="<?php echo $slider_button_url[$q]  ?>">
-                                                    <img src="https://cdn.shopify.com/s/files/1/0066/1769/4275/t/5/assets/ShopIMG-1-color-RGB-C-2019-Simple.png?v=9774215999303656515" />
+                                                    <img src="<?php echo get_template_directory_uri() . "/img/ezgif.com-gif-maker.png"; ?>" />
                                                 </a>
                                                 <div class="container">
                                                     <div class="subtitle text-center">
@@ -69,7 +69,7 @@
         <section class="popular-products">
            <div class="container">
                 <div class="section-title">
-                    <h2>Popular Products</h2>
+                    <h2><?php esc_html_e("Popular Products","fancy_theme") ?></h2>
                 </div>
                 <?php 
                    echo do_shortcode('[products limit="'.$popular_limit.'" columns="4" orderby="popularity"]');
@@ -80,7 +80,7 @@
         <section class="popular-products">
            <div class="container">
                 <div class="section-title">
-                    <h2>New Arrivals</h2>
+                    <h2><?php esc_html_e("New Arrivals","fancy_theme") ?></h2>
                 </div>
                 <?php 
                    echo do_shortcode('[products limit="'.$arrivals_limit.'" columns="4" orderby="date"]');
@@ -103,7 +103,7 @@
             <div class="deal-of-the-week">
                 <div class="container">
                 <div class="section-title">
-                    <h2>Deal of the Week</h2>
+                    <h2><?php esc_html_e("Deal of the Week", "fancy_theme") ?></h2>
                 </div>
                     
                         <div class="row d-flex align-items-center">
@@ -132,7 +132,7 @@
         <section class="lab-blog">
             <div class="container">
                 <div class="section-title">
-                    <h2>News From Our Blog</h2>
+                    <h2><?php esc_html_e("News From Our Blog", "fancy_theme") ?></h2>
                 </div>
                 <div class="row mt-3">
                     <?php
